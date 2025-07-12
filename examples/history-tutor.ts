@@ -95,5 +95,3 @@ const outputTypes = async () => {
 // agentWithTools().catch(console.error);
 // multiAgentHandoffs().catch(console.error);
 outputTypes().catch(console.error);
-
-//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
