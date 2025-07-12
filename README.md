@@ -23,7 +23,16 @@ For comprehensive documentation and API reference, visit: **https://openai.githu
    ```bash
    pnpm install
    ```
-3. Set up your OpenAI API key as an environment variable:
+3. Set up your environment variables:
+   ```bash
+   # Copy the example env file
+   cp .env.example .env
+   
+   # Edit .env and add your OpenAI API key
+   # OPENAI_API_KEY=your-actual-api-key-here
+   ```
+   
+   **Alternative:** You can still set environment variables manually if preferred:
    ```bash
    export OPENAI_API_KEY="your-api-key-here"
    ```
@@ -74,6 +83,19 @@ npx tsx examples/context-outpus-handoffs.ts
 ```
 
 ## 🔧 Key Concepts
+
+### Environment Configuration
+
+This project supports `.env` files for easy environment variable management:
+
+```bash
+# .env file
+OPENAI_API_KEY=your-api-key-here
+OPENAI_ORG_ID=your-org-id-here  # Optional
+OPENAI_BASE_URL=https://api.openai.com/v1  # Optional
+```
+
+The examples automatically load these variables using the utility in `utils/env.ts`.
 
 ### Agents
 Create intelligent agents with specific roles and instructions:
@@ -145,6 +167,7 @@ To modify the examples or create your own:
 
 - `@openai/agents`: The core OpenAI Agents SDK
 - `zod`: Schema validation for structured outputs and tool parameters
+- `dotenv`: Environment variable loading from `.env` files
 
 ## 🤝 Contributing
 

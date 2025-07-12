@@ -1,4 +1,8 @@
 import { Agent, run } from '@openai/agents';
+import { validateEnv } from '../utils/env';
+
+// Load and validate environment variables
+validateEnv();
 
 const agent = new Agent({
   name: 'Assistant',
